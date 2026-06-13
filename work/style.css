@@ -1,0 +1,283 @@
+* {
+    box-sizing: border-box;
+    color: var(--color);
+    --color: rgb(221 221 221);
+    --background: rgb(89 89 89);
+    --background-2:  color-mix(in srgb, var(--background), #1b1a1a 53%);
+    --background-3:  color-mix(in srgb, var(--background), #414141 53%);
+    --border-color: #222;
+    font-size: 20px;
+    line-height: 1.5;
+
+    font-family: 'Serif';
+}
+
+
+
+body {
+    background-color: var(--background);
+    display: flex;
+    margin: 0
+}
+
+
+
+.loading {
+    background: #000000ca;
+    
+    backdrop-filter: blur(4px);
+    
+    width: 100%;
+    height: 100%;
+    
+    position: absolute;
+    text-align: center;
+}
+
+.loading p {
+    margin-top: 20%;
+    font-size: 40px;
+}
+
+
+
+.loader {
+  display: flex;
+  justify-content: center;
+  gap: 8px; /* Расстояние между шариками */
+  height: 100vh; /* Центрирование на экране */
+  font-size: 10px;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  background-color: white; /* Цвет шариков */
+  border-radius: 50%; /* Превращаем квадраты в круги */
+  animation: wave 1.2s infinite ease-in-out;
+}
+
+/* Задержка анимации для эффекта волны */
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Сама анимация (движение вверх-вниз и изменение размера) */
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.2); /* Смещение вверх */
+    background-color: white; /* Опционально: смена цвета в пике */
+  }
+}
+
+
+
+
+
+
+
+
+
+.aside {
+    width: 400px;
+    height: 100vh;
+
+    background-color: var(--background-3);
+    overflow-y: auto;
+
+    border: 1px solid var(--border-color);
+}
+
+.aside p {
+    align-content: center;
+    text-align: start;
+    font-size: 20px;
+    padding: 0 15px;
+}
+
+.aside .url {
+    color: var(--color);
+    width: 100%;
+    height: 70px;
+    border: 1px solid var(--border-color);
+    background-color: var(--background-2);
+    transition: all .2s;
+    box-shadow: 1px 10px 5px 0px rgba(0, 0, 0, 0.4);
+    border-radius: 0 10px 10px 0;
+
+    display: flex;
+    justify-content: space-between;
+    
+    padding: 0px 5px;
+}
+
+.aside .url:hover {
+    border-top: 1px solid var(--border-color);
+    transform: translate(0, -5px);
+    transition: all .3s;
+    box-shadow: 1px 15px 5px 0px rgba(0, 0, 0, 0.4);
+}
+
+.aside .url [click-href$="_reload"] {
+    font-size: 40px;
+
+    transition: all .2s;
+}
+
+.aside .url [click-href$="_reload"]:hover {
+    font-size: 45px;
+
+    transition: all .2s;
+}
+
+[click-href] {
+    cursor: pointer;
+}
+
+
+
+
+.aside .aside_item {
+    display: flex;
+    padding: 0 5px;
+    height: 85px;
+}
+
+.aside .aside_item img {
+    object-fit: contain;
+}
+
+.aside .aside_item p {
+    font-size: 35px;
+    padding-left: 5px;
+    margin: 0;
+}
+
+.aside .aside_item p b {
+    width: 5px;
+    display: inline-block;
+}
+
+
+
+
+
+
+
+.off {
+    display: none !important;
+}
+
+.on {
+    display: block !important;
+}
+
+
+
+pre {
+    border: 1px solid black;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 1px 3px 9px 0px #0004 inset;
+    background: #0003;
+}
+
+
+
+
+
+.container {
+    margin: 10px auto 0 auto;
+    max-width: 90%;
+    width: 900px;
+    height: 99vh;
+
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+
+    padding: 20px 10px 20px 20px;
+    background-color: var(--background-2);
+    
+    box-shadow: 1px 10px 5px 0px rgba(0, 0, 0, 0.4);
+
+}
+
+
+
+
+
+.chat {
+    width: 100%;
+    height: 95%;
+    text-align: justify;
+
+    padding-right: 10px;
+
+    overflow: scroll;
+    overflow-x: hidden;
+
+}
+
+.chat::-webkit-scrollbar {  
+  width: 10px; /* Для вертикального */
+  height: 10px; /* Для горизонтального */
+
+  border-radius: 0 20px 0 0;
+}
+
+.chat::-webkit-scrollbar-track {
+  background: var(--background-2);
+  border-radius: 10px;
+}
+
+.chat::-webkit-scrollbar-thumb {
+  background: var(--background);
+  border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.d-flex {
+    display: flex;
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+}
+
+.gap-1 {
+    gap: 2px;
+}
+
+.gap-2 {
+    gap: 4px;
+}

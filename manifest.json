@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+    "name": "AI for the VERY HARD text!",
+    "version": "1.0",
+    "description": "Переводит весь текст в упрощеный вариант.",
+    "icons": {
+        "64": "icons/icon64.png",
+        "48": "icons/icon48.png",
+        "32": "icons/icon32.png",
+        "24": "icons/icon24.png"
+    },
+    "permissions": [
+        "http://localhost:11434/*",
+        "contextMenus",
+        "tabs",
+        "storage",
+        "scripting",
+        "https://*/*",
+        "http://*/*"
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    }
+}
