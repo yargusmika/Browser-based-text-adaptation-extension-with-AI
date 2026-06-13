@@ -1,0 +1,1 @@
+# Browser-based-text-adaptation-extension-with-AI
